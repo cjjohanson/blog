@@ -5,20 +5,24 @@ from django.core.mail import send_mail
 from .forms import ContactForm
 from decouple import config
 
+
 class HomeView(TemplateView):
-    template_name = 'home.html'
+    template_name = "home.html"
+
 
 class BlogView(TemplateView):
-    template_name = 'blog.html'
+    template_name = "blog.html"
+
 
 class ResumeView(TemplateView):
-    template_name = 'resume.html'
+    template_name = "resume.html"
+
 
 class ContactUsView(FormView):
-    template_name = 'contact.html'
+    template_name = "contact.html"
     form_class = ContactForm
     # after success, stay on the same page
-    success_url = reverse_lazy('contact')
+    success_url = reverse_lazy("contact")
 
     def form_valid(self, form):
         # called when valid form data has been posted
@@ -26,10 +30,16 @@ class ContactUsView(FormView):
 
         # send email notification to yourself
         send_mail(
-            subject=f"Incoming contact request from {form.cleaned_data['name']}",
-            message=f"Message: {form.cleaned_data['message']}\n\nFrom: {form.cleaned_data['name']} ({form.cleaned_data['email']})",
-            from_email=config('EMAIL_HOST_USER'),
-            recipient_list=[config('EMAIL_HOST_USER')],
+            subject=(
+                f"Incoming contact request from {form.cleaned_data['name']}"
+            ),
+            message=(
+                f"Message: {form.cleaned_data['message']}\n\n"
+                f"From: {form.cleaned_data['name']} "
+                f"({form.cleaned_data['email']})"
+            ),
+            from_email=config("EMAIL_HOST_USER"),
+            recipient_list=[config("EMAIL_HOST_USER")],
             fail_silently=False,
         )
 
