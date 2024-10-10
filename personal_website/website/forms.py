@@ -5,7 +5,7 @@ from .models import ContactMessage
 class ContactForm(forms.ModelForm):
     class Meta:
         model = ContactMessage
-        fields = ['name', 'email', 'message']
+        fields = ["name", "email", "message"]
 
     def save(self, commit=True):
         # NOTE: saving without committing is a convention and is not necessary.
