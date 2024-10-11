@@ -11,7 +11,8 @@ class HomeView(TemplateView):
 
 
 class BlogView(TemplateView):
-    template_name = "blog.html"
+    # template_name = "blog.html"
+    template_name = "coming_soon.html"
 
 
 class ResumeView(TemplateView):
