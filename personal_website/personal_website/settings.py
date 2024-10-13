@@ -27,6 +27,16 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", cast=bool)
 
+if DEBUG:
+    STATIC_URL = "/static/"
+    STATICFILES_DIRS = [BASE_DIR / "website/static"]
+else:
+    STATIC_URL = config("STATIC_URL")
+    # Where collectstatic will dump the static files
+    STATIC_ROOT = BASE_DIR / "staticfiles"
+    # Where static files live
+    STATICFILES_DIRS = [BASE_DIR / config("STATICFILES_DIRS")]
+
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="").split(",")
 
 
@@ -125,13 +135,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
-
-STATIC_URL = config("STATIC_URL")
-STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_DIRS = [BASE_DIR / config("STATICFILES_DIRS")]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
