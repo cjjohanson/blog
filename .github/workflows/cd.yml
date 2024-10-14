@@ -31,6 +31,6 @@ jobs:
               pipenv install --deploy --ignore-pipfile
               pipenv run python personal_website/manage.py migrate
               pipenv run python personal_website/manage.py collectstatic --noinput
-              echo "$PASSWORD" | sudo -S systemctl restart gunicorn
-              echo "$PASSWORD" | sudo -S systemctl restart nginx
+              echo "$PASSWORD" | sudo -S -k systemctl restart gunicorn
+              echo "$PASSWORD" | sudo -S -k systemctl restart nginx
             EOF
