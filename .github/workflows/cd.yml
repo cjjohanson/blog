@@ -31,6 +31,12 @@ jobs:
               pipenv install --deploy --ignore-pipfile
               pipenv run python personal_website/manage.py migrate
               pipenv run python personal_website/manage.py collectstatic --noinput
-              echo "$PASSWORD" | sudo -S -k systemctl restart gunicorn
-              echo "$PASSWORD" | sudo -S -k systemctl restart nginx
             EOF
+
+        - name: Restart services
+          env:
+            PASSWORD: ${{ secrets.SSH_PASSWORD }}
+          run: |
+            ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} \
+            "echo \"$PASSWORD\" | sudo -S systemctl restart gunicorn && \
+             echo \"$PASSWORD\" | sudo -S systemctl restart nginx"
