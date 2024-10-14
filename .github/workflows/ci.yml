@@ -41,6 +41,15 @@ jobs:
           DEBUG: ${{ secrets.DEBUG }}
           STATIC_URL: ${{ secrets.STATIC_URL }}
           STATICFILES_DIRS: ${{ secrets.STATICFILES_DIRS }}
+          DB_ENGINE: ${{ secrets.DB_ENGINE }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          EMAIL_BACKEND: ${{ secrets.EMAIL_BACKEND }}
+          EMAIL_HOST: ${{ secrets.EMAIL_HOST }}
+          EMAIL_PORT: ${{ secrets.EMAIL_PORT }}
+          EMAIL_USE_TLS: ${{ secrets.EMAIL_USE_TLS }}
+          EMAIL_HOST_USER: ${{ secrets.EMAIL_HOST_USER }}
+          EMAIL_HOST_PASSWORD: ${{ secrets.EMAIL_HOST_PASSWORD }}
+          DEFAULT_FROM_EMAIL: ${{ secrets.DEFAULT_FROM_EMAIL }}
           DJANGO_SETTINGS_MODULE: personal_website.settings
         run: |
           pipenv run python personal_website/manage.py test --failfast
