@@ -5,6 +5,8 @@ from django.core.mail import send_mail
 from .forms import ContactForm
 from decouple import config
 
+from django.shortcuts import render
+
 
 class HomeView(TemplateView):
     template_name = "home.html"
@@ -46,3 +48,11 @@ class ContactUsView(FormView):
 
         # pass 'success' flag to the template
         return self.render_to_response(self.get_context_data(success=True))
+
+
+def custom_404(request, exception):
+    return render(request, "404_error.html", status=404)
+
+
+def custom_500(request):
+    return render(request, "500_error.html", status=500)
