@@ -38,7 +38,9 @@ jobs:
       - name: Run Django tests
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          DEBUG: False
+          DEBUG: ${{ secrets.DEBUG }}
+          STATIC_URL: ${{ secrets.STATIC_URL }}
+          STATICFILES_DIRS: ${{ secrets.STATICFILES_DIRS }}
           DJANGO_SETTINGS_MODULE: personal_website.settings
         run: |
           pipenv run python personal_website/manage.py test --failfast
