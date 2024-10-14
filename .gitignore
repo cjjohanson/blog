@@ -2,6 +2,9 @@
 __pycache__/
 *.py[cod]
 
+# ignore staticfiles
+staticfiles/
+
 # SQLite database
 *.sqlite3
 
