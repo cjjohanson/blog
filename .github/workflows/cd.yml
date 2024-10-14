@@ -1,0 +1,34 @@
+name: Continuous Deployment
+
+on:
+  workflow_run:
+    workflows: ["Continuous Integration"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    # only deploy of CI pipeline runs successfully
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+        - name: Check out repository
+          uses: actions/checkout@v2
+
+        - name: Set up SSH
+          uses: webfactory/ssh-agent@v0.5.3
+          with:
+            ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        
+        - name: Deploy to server
+          run: |
+            ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} << 'EOF'
+              cd /home/django-personal-website-app/blog
+              git pull origin main
+              pipenv install --deploy --ignore-pipfile
+              pipenv run python personal_website/manage.py migrate
+              pipenv run python personal_website/manage.py collectstatic --noinput
+              sudo systemctl restart gunicorn
+              sudo systemctl restart nginx
+            EOF
