@@ -22,6 +22,8 @@ jobs:
             ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
         
         - name: Deploy to server
+          env:
+            PASSWORD: ${{ secrets.SSH_PASSWORD }}
           run: |
             ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} << 'EOF'
               cd /home/django-personal-website-app/blog
@@ -32,5 +34,3 @@ jobs:
               echo $PASSWORD | sudo - S systemctl restart gunicorn
               echo $PASSWORD | sudo - S systemctl restart nginx
             EOF
-           env:
-            PASSWORD: ${{ secrets.SSH_PASSWORD }}
