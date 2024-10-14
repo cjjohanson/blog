@@ -32,6 +32,9 @@ jobs:
       - name: Run formatter (black)
         run: pipenv run black --check .
 
+      - name: See current path
+        run: pwd
+
       - name: Run Django tests
         env:
           DJANGO_SETTINGS_MODULE: personal_website.personal_website.settings
