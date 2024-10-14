@@ -37,7 +37,7 @@ jobs:
 
       - name: Run Django tests
         env:
-          DJANGO_SETTINGS_MODULE: personal_website.personal_website.settings
+          DJANGO_SETTINGS_MODULE: personal_website.settings
         run: |
           pipenv run python personal_website/manage.py test --failfast
         
