@@ -1,4 +1,4 @@
-name: Continuous Integration for Python Linting and Formatting
+name: Continuous Integration
 
 on:
   push:
@@ -31,4 +31,10 @@ jobs:
       
       - name: Run formatter (black)
         run: pipenv run black --check .
+
+      - name: Run Django tests
+        env:
+          DJANGO_SETTINGS_MODULE: personal_website.personal_website.settings
+        run: |
+          pipenv run python manage.py test --failfast
         
