@@ -21,3 +21,6 @@ staticfiles/
 # Log files
 *.log
 to_do.md
+
+node_modules/
+.next/
