@@ -1,5 +1,6 @@
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
+import Script from 'next/script'
 
 import '@/styles/tailwind.css'
 
@@ -21,6 +22,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+
+      {/* Tracking via plausible */}
+      <Script
+        defer
+        data-domain="cjlovesdata.com"
+        src="https://plausible.io/js/script.js"
+      />
+
       <body className="flex h-full bg-zinc-50 dark:bg-black">
         <Providers>
           <div className="flex w-full">
