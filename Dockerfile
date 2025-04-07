@@ -1,26 +1,21 @@
-# Use an official Node.js runtime as base image
+# Use official Node.js 20 image
 FROM node:20-alpine
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json (or yarn.lock)
-COPY package*.json ./
-
 # Install dependencies
+COPY package*.json ./
 RUN npm install
 
-# Copy the rest of the project files
+# Copy project files
 COPY . .
 
-# Build the static site
-RUN npm run build && npm run export
+# Build the Next.js app
+RUN npm run build
 
-# Use a tiny web server to serve the static files
-RUN npm install -g serve
-
-# Expose the port the app runs on
+# Expose the default Next.js port
 EXPOSE 3000
 
 # Start the app
-CMD ["serve", "-s", "out", "-l", "3000"]
+CMD ["npm", "start"]
