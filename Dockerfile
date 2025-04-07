@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Build the static site
-RUN npm run build
+RUN npm run build && npm run export
 
 # Use a tiny web server to serve the static files
 RUN npm install -g serve
