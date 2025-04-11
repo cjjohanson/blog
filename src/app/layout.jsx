@@ -12,10 +12,27 @@ export const metadata = {
   },
   description:
     'I’m CJ, a data engineer and scientist exploring the world of indie hacking and solopreneurship.',
-  alternates: {
-    types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
-    },
+  openGraph: {
+    title: 'CJ Loves Data',
+    description: 'I’m CJ, a data engineer and scientist exploring the world of indie hacking and solopreneurship.',
+    url: 'https://cjlovesdata.com',
+    siteName: 'CJ Loves Data',
+    images: [
+      {
+        url: 'https://www.cjlovesdata.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.3bb321ce.jpg&w=1080&q=75',
+        width: 1200,
+        height: 630,
+        alt: 'CJ Loves Data - Open Graph image',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'CJ Loves Data',
+    description: 'Data, design, and experiments by Chris Johanson.',
+    images: ['https://www.cjlovesdata.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.3bb321ce.jpg&w=1080&q=75'],
+    creator: '@cjlovesdata', // optional
   },
 }
 
