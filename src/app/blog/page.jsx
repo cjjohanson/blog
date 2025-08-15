@@ -7,7 +7,7 @@ function Article({ article }) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
-        <Card.Title href={`/articles/${article.slug}`}>
+        <Card.Title href={`/blog/${article.slug}`}>
           {article.title}
         </Card.Title>
         <Card.Eyebrow
@@ -33,7 +33,7 @@ function Article({ article }) {
 }
 
 export const metadata = {
-  title: 'Articles',
+  title: 'Blog',
   description:
     'All of my long-form thoughts data, programming, indie hacking, and solopreneurship.',
 }

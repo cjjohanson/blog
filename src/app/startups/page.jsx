@@ -11,14 +11,14 @@ const startups = [
     name: 'ArtsyPetz',
     description:
       'Custom pet portraits without the headaches, available as wall art, clothing, mugs, bags, and more.',
-    link: { href: 'http://artsypetz.com', label: 'artsypetz.com' },
+    link: { href: 'https://artsypetz.com', label: 'artsypetz.com' },
     logo: logoArtsyPetz,
   },
   {
-    name: 'In Progress',
+    name: 'Rippl',
     description:
       'An insanely easy way grow your social media presence.',
-    // link: { href: '#', label: '' },
+    link: { href: 'https://postrippl.co', label: 'postrippl.co' },
     logo: logoPost,
   },
   {
