@@ -1,0 +1,112 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import uncertain_road from './uncertain_road.jpeg'
+import PullQuote from '@/components/PullQuote'
+import { Spacer } from '@/components/Spacer'
+import { SpacedGroup, TightGroup, NoSpacing } from '@/components/SpacingControls'
+import { Header1, Header2, Header3, ParagraphToHeader } from '@/components/HeaderSpacing'
+
+export const article = {
+  author: 'CJ Johanson',
+  date: '2025-08-27',
+  title: "I Don't Know What I'm Doing (And That's Probably Normal)",
+  description: `The messy reality of building something from scratch, and why that uncomfortable
+  feeling of not knowing what you're doing might actually be progress.`,
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Most startup advice assumes you know what you're doing. The reality is messier than that.
+This week reminded me that uncertainty isn't a bug in the entrepreneurial process.
+
+<Image src={uncertain_road} alt="" />
+
+It might be the whole point.
+
+<Header1 spacing="tight">When The Road Gets Bumpy</Header1>
+
+Sometimes, the road is just bumpy.
+
+This past week I have found myself scrolling Reddit in bed trying to find people who need <a href="https://postrippl.co" target="_blank" rel="noopener noreferrer">Rippl</a> (a tool to repurpose 
+blog content across social media). I realized that I released Rippl without any user onboarding process (maybe too 
+much M in MVP). I’ve had this general “what the hell am I doing?” feeling when trying to figure out marketing as an 
+engineer and scientist.
+
+It's tough dealing with the contrast of knowing how to build anything, but feeling completely lost on how to get people to use it.
+
+<Header1 spacing="tight">The Polished Startup Myth</Header1>
+
+Founders and builders feel like they should have it figured out.
+
+Everyone else seems confident and strategic. They’re posting about “go-to-market strategies” and “customer acquisition playbooks,” 
+making it sound like they’re following some proven formula. All of their decisions seem to come from a grand plan they had at the very 
+beginning of their journey and everything is going according to plan.
+
+I don’t think any of that is true.
+
+If you hadn’t noticed yet, my journey hasn’t consisted of following a master plan. All of these builders and founders are pushing narratives 
+that are suspiciously clean and polished.
+
+Reality is messy and uneasy. Most of us are making decisions with incomplete information. We’re trying random stuff and hoping it works. 
+We’re learning skills we never thought we would need (hey, marketing!). We’re questioning every choice while still having to make choices.
+
+The gap between appearing and reality makes us feel like we’re doing it wrong, when actually we might be doing it exactly right.
+
+Marc Randolph, co-founder of Netflix said “The first version of anything you build should embarrass you. If it doesn't, you started too late.” 
+That is where I'm at. And, oh boy, do I feel embarrassed.
+
+<Header1 spacing="tight">Three Truths About Not Knowing What You're Doing</Header1>
+
+<TightGroup>
+
+<Header3>Not knowing ≠ being clueless</Header3>
+
+  * You can acknowledge uncertainty while still being competent
+  *There's a difference between "I don't know the best approach" and "I have no idea what I'm trying to accomplish"
+  * Your engineering/building skills still matter, even in unfamiliar territory
+
+</TightGroup>
+
+<TightGroup>
+
+<Header3>Decision-Making in the Dark Is a Skill</Header3>
+
+  * You'll never have complete information (especially in early stages). You have to bias toward action
+  * The skill is making reasonable bets with limited data
+  * If you're ok with making a decision with incomplete information and have a bias toward action, you might just be ok. That's what I'm telling myself, at least!
+  * Take my Reddit approach. Is this the avenue for finding users? Maybe not. But I have to do something. I can't stand still so I need to take some kind 
+  of action. Movement creates clarity.
+  * The same could be said for building <a href="https://postrippl.co" target="_blank" rel="noopener noreferrer">Rippl</a> in the first place! Did I know for sure that repurposing blog posts across social media is a pain point experienced 
+  by untold millions of people? Absolutely not. It was my own pain point and I assumed I wasn't the only one.
+
+</TightGroup>
+
+<TightGroup>
+
+<Header3>Everyone Is Winging It More Than They Admit</Header3>
+
+* The polished advice you see is written by people looking backward.
+* When they were in your shoes, they were probably just as uncertain. I've heard this from enough experienced founders to see that it could be true for me, too.
+* They're sharing the story after they know the ending. The story is crafted to fit a particular narrative.
+
+</TightGroup>
+
+<PullQuote spacing="loose">Movement creates clarity.</PullQuote>
+
+<Header1 spacing="tight">What Progress Actually Feels Like</Header1>
+
+Maybe the problem isn’t that you don’t know what you’re doing. Maybe the problem is thinking you should know what you’re doing at this stage.
+
+Once you accept that uncertainty is normal and it is not a personal failing, you can free yourself up to focus on learning quickly rather than being right immediately. You can make decisions without needing perfect confidence. You can share your real experience instead of performing fake expertise.
+
+<SpacedGroup spacing="tight">
+
+Building something from scratch means stepping into the unknown. That uncomfortable feeling of not knowing might just be what progress feels like.
+
+And progress is what we're here for.
+
+</SpacedGroup>
