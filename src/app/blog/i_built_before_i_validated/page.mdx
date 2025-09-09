@@ -1,0 +1,123 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import burning_house_meme from './burning_house_meme.webp'
+import PullQuote from '@/components/PullQuote'
+import { Spacer } from '@/components/Spacer'
+import { SpacedGroup, TightGroup, NoSpacing } from '@/components/SpacingControls'
+import { Header1, Header2, Header3, ParagraphToHeader } from '@/components/HeaderSpacing'
+import { AlignedImage } from '@/components/AlignedImage'
+
+export const article = {
+  author: 'CJ Johanson',
+  date: '2025-09-09',
+  title: "I Built Before I Validated (And What That Actually Taught Me)",
+  description: `How hiding behind product development taught me that 
+  marketing isn't scary. It's where rewards live.`,
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+My website design looked like crap.
+
+I was ready to launch my first Google Ads campaign for Rippl when I took an honest look at my 
+landing page. Bare bones design, engineer-friendly (aka lifeless) copy, zero visual 
+appeal. I realized I was about to pay for traffic to a website that would convince exactly 
+nobody to sign up.
+
+I built Rippl before I validated the idea.
+
+<AlignedImage src={burning_house_meme} alt="" />
+
+I started building it to solve my own problem: stop wasting time manually repurposing my blog 
+posts for social media. Eventually, I decided to productize it because I assumed I wasn’t 
+the only person dealing with this problem. After launching the product, the new mission was 
+to find customers. For quick and (relatively) cheap validation, I decided to use Google 
+Ads. 
+
+That’s when it hit me.
+
+The website design was terrible. The tool worked for me but I’m trying to find customers other 
+than myself. It is the classic builders’ problem: don’t build before you validate. And I did 
+exactly what I knew I shouldn’t have.
+
+
+<Header1 spacing="tight">The Building Trap</Header1>
+
+You think you’re building a product, but you’re really hiding.  Anyone can build a 
+product. It takes more to build a product that people will pay for. You can hide 
+behind building to avoid the big scary monster: sales and marketing.
+
+Sure, you start by building a tool that solves your own problem. But building for 
+yourself is nothing like building for customers. If you’re the only user, you can 
+cut corners and ignore a lot of problems. When you’re building for customers, you have to 
+address those problems and solve them. The customers are the ones who will pay, not you.
+
+You finish building and everything is working but you didn’t build with customers in 
+mind. The product solves the problem but it looks like an undergraduate project. There’s 
+nothing to convince prospects to stick around and see just how good the product is.
+
+Good functionality does not guarantee a good product. You need the whole picture: 
+functionality and design. If your landing page doesn’t convincingly speak to the value 
+of your product, you’re going to be shipping into the void.
+
+
+<Header1 spacing="tight">What I Learned About Engineering for Marketing</Header1>
+
+
+<Header3>Building isn't hiding (but I was using it that way)</Header3>
+
+I told myself I was perfecting the product. Really, I was avoiding 
+the hard part: putting it in front of strangers who might reject 
+it. Building felt productive and safe. Marketing felt scary and uncertain.
+
+With Rippl, I built up false confidence by telling myself "I'm 
+building this to solve my own problem so surely others will 
+see the value." That was all belief and no substance.
+
+Exactly what I shouldn't have done.
+
+The lesson: Building isn't procrastination if you're doing it right. Follow 
+the principle of "good is good enough." If you find yourself adding 
+features with the goal of perfection, you've veered off course.
+
+<Header3>Your user base isn’t you, even if you solve your own problem first</Header3>
+
+If you build something for yourself and later decide to productize it, your scope 
+has changed entirely. It's a different game with different rules altogether. When 
+you build for yourself, you can play it fast and loose. Not so when you productize.
+
+The lesson: Be honest with yourself from the beginning about your goal. If you 
+ultimately want to productize and generate revenue, make sure all your choices 
+bear that in mind. Your decisions should prioritize your customers, not you.
+
+<Header3>Design is marketing</Header3>
+
+Great design isn’t a feature. It’s expected. I wish we lived in a time where janky 
+frontends still got great results. Unfortunately, great design is so accessible 
+that anything less can be off-putting. Your design doesn’t have to be cutting edge, 
+but it must be enough to keep a prospect interested.
+
+The lesson: All of your design and product choices should ask the question: 
+“Would this keep me engaged if it were someone else’s website?” If the answer is 
+yes, great! If the answer is no, fix it.
+
+<PullQuote spacing="loose">Marketing felt like the scary thing because that's where 
+all the rejection could happen. But that's also where all the reward happens.</PullQuote>
+
+<Header1 spacing="tight">Where the Reward Lives</Header1>
+
+Marketing felt like the scary thing because that's where all the rejection could happen. 
+That's also where all the reward happens. I’ve realized they're the same space.
+
+The bigger lesson is about being ruthlessly honest with myself from the start. 
+What are my real intentions? If I want to build a business, then marketing isn't something 
+I do after building - it's part of the building process from day one. I've been told this 
+by successful people. I've read it in books. I thought I understood it, but fear trumped 
+logic when it came time to actually execute.
+
+I may not execute this perfectly next time. But at least now I know that avoiding marketing 
+is avoiding the whole point.
